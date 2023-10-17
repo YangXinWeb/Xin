@@ -1,0 +1,63 @@
+    .header-yang-xin{
+      font-family: Arial, Helvetica, sans-serif;
+      position: fixed;
+      margin:10px 20px 20px 20px;  
+      transform: rotate(0deg); 
+    }
+    .name-yang-xin {
+      font-size: 20px;   
+      color:#000000;
+    }
+    .name-yang-xin:hover{
+      opacity: 0.5;
+    }
+    .menu-icon {
+    cursor: pointer;
+    margin-top:20px;
+    padding: 20px 10px 5px 7px;
+    position: relative;
+    transform: rotate(5deg);
+}
+.bar {
+    width: 25px;
+    height: 2.5px;
+    border-radius: 1px;
+    background-color: #000000;
+    margin: 5px;
+    transition: 0.4s;
+}
+.menu-icon:hover{ 
+  opacity: 0.5;
+}
+/* Style for the menu (initially hidden) */
+.menu {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    list-style-type: none;
+    width: 30px;
+    padding-top:20;
+    margin-top: 10px;
+    position: absolute;
+    background-color: #ffffff46;
+    display: none;
+}
+.menu li {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-left: -30px;
+    transform: rotate(5deg);   
+}
+.menu a {
+    text-decoration: none;
+    color: #000000;
+}
+.menu a:hover {
+  opacity: 0.5;
+}  
+         
+.copy-right{
+  text-align: center; 
+  padding: 30px; 
+  color:#000000;
+  font-size: 11px;
+}

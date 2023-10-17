@@ -1,0 +1,36 @@
+.workCovers-contents {
+    padding:120px 200px 150px 150px;  
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    min-width: 200px;
+    column-gap:10px;
+    row-gap: 20px;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+.workCovers-contents img {
+  min-width: 100px;
+}
+.work-covers{
+  width:80%;
+  border-radius: 3px;
+  margin:10px;
+}
+.work-covers:hover {
+  opacity:0.8;
+}
+.cover-text-title{
+  margin-top:-5px;
+  margin-left:10px;
+  color:rgb(0, 0, 0);
+  font-size: 11px;
+  cursor: pointer;
+}
+.cover-text-title:hover{
+  opacity:0.5;
+}
+.cover-text{
+  margin-top:-10px;
+  margin-left:10px;
+  color:rgb(135, 135, 135);
+  font-size: 11px;
+}

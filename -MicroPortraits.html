@@ -60,10 +60,19 @@
       <p class="information-works">Medium: Coverslips, water soluble pigments, acrylic</p>
       <p class="information-works">Dimension: 15cm*40cm</p>  
     </div>
-
   </div>
 
   
+  <img id="image" src="pictures/elements/cell.gif" alt="Description of the image">
+	<script>
+		document.addEventListener("mousemove", function(event) {
+			var x = event.clientX;
+			var y = event.clientY;
+			var image = document.getElementById("image");
+			image.style.right = x + "px";
+			image.style.bottom = y + "px";
+		});
+	</script>
 
     <footer class="copy-right">
       <p>&copy; 2023 YangXin. All rights reserved.</p>

@@ -61,5 +61,12 @@
   margin-top: -5px;
   font-size: 11px;
   color:rgb(135, 135, 135);
-
 }
+
+#image {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+}
+
+

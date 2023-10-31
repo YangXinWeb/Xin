@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Vertical and horizontal gap between grid items */
+        }
+
+        .grid-item {
+          flex: 0 0 calc(33.33% - 20px); /* 33.33% for three columns, subtract the gap */
+            border: 1px solid #ddd;
+        }
+
+        .picture-container {
+
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto; /* Maintain the original aspect ratio of the images */
+        }
+
+        /* Make the second-row items span two rows and place them below the first row */
+        .grid-item:nth-child(4),
+        .grid-item:nth-child(5),
+        .grid-item:nth-child(6) {
+            grid-row: span 2;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="grid-container">
+
+        <div class="grid-item">
+          <div class="picture-container">
+            <img src="pictures/Works/LiziJieProject/Lizijie-2.jpg" alt="Image 1">  
+
+            <img src="pictures/Works/LiziJieProject/Lizijie-2.jpg" alt="Image 1">
+
+            <img src="pictures/Works/LiziJieProject/Lizijie-3.jpg" alt="Image 2">
+          </div> 
+
+      </div> 
+
+      <div class="grid-item">
+
+        <div class="picture-container">
+          <img src="pictures/Works/LiziJieProject/Lizijie-2.jpg" alt="Image 1">
+          <img src="pictures/Works/LiziJieProject/Lizijie-3.jpg" alt="Image 2">
+        </div>
+
+        <div class="picture-container">
+          <img src="pictures/Works/LiziJieProject/Lizijie-2.jpg" alt="Image 1">
+        </div> 
+
+        <div class="picture-container">
+          <img src="pictures/Works/LiziJieProject/LiziJie-1.jpg" alt="Image 2">        
+      </div>       
+    </div> 
+
+
+    <div class="grid-item">
+
+      <div class="picture-container">
+        <img src="pictures/Works/LiziJieProject/Lizijie-2.jpg" alt="Image 1">
+
+        <img src="pictures/Works/LiziJieProject/Lizijie-3.jpg" alt="Image 2">
+      </div>
+
+      <div class="picture-container">
+        <img src="pictures/Works/LiziJieProject/Lizijie-2.jpg" alt="Image 1">
+      </div> 
+
+      <div class="picture-container">
+        <img src="pictures/Works/LiziJieProject/LiziJie-1.jpg" alt="Image 2">        
+    </div>       
+  </div> 
+
+
+
+
+
+
+        <!-- Add more grid items as needed -->
+    </div>
+</body>
+</html>

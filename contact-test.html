@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+
+  <body>
+   <div>
+    <form  onsubmit="sendEmail (); reset(); return false;">
+      <h3>GET IN TOUCH</h3>
+
+      <input type="text" id="name" placeholder= "Your Name" required>
+
+      <input type="email" id="email" placeholder="Email id" required>
+
+
+      <input type="text" id="phone" placeholder="Phone no.
+      " required> 
+
+      <textarea id="message" rows= "4" placeholder="How can I help you"></textarea>
+
+      <button type="submit" onclick="sendEmail()"> Send</button>
+
+    </form>
+   </div>
+
+   <script src="https://smtpjs.com/v3/smtp.js"> </script>
+
+    <script>
+      function sendEmail (){
+       
+        Email.send({
+
+        SecureToken : "335bd2bf-eddb-4f0e-943a-1c9523843f6b",
+        To : 'zuoxin0027@gmail.com',
+        From : "yangxin0027@gmail.com",
+        Subject : "New Contact",
+        Body : "This is test!"
+      }).then(
+      message => alert(message)
+      );
+     }
+  </script>
+
+  </body>
+</html>
+
+<!--SecureToken : "d52d0605-706a-48cf-92ad-d1661fe2f6cf" -->
+<!--
+  https://www.youtube.com/watch?v=MV-Aqkjju64
+
+-->

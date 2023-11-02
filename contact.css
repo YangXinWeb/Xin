@@ -1,10 +1,72 @@
 .container{
-  padding-top: 150px;
-  min-width: 200px;
-  text-align: center;
+  padding:120px 0px 150px 0px;  
+  display:grid;
+  grid-template-columns:1fr 3fr;
+  min-width: 400px;
+  column-gap:10px;
+  row-gap: 20px;
   font-family: Arial, Helvetica, sans-serif;  
-  min-height: 100vh;
-  background-color: blue;
-
+}
+form {
+  border: none;
+  display:flex;
+  flex-direction: column;
+  height:300px;
+  width: 40%;
+}
+.sendMessage:hover{
+  color: rgb(223, 238, 251);
+}
+.contact-input{
+  border-radius: 2px;
+  border:none;
+  background-color: rgb(244, 244, 244);
+  margin-top: 5px;
+  padding:5px 5px 5px 15px ;
+}
+.contact-input:hover{
+  box-shadow: 0 0 50px 5px rgba(0, 47, 255, 0.1);
+  background-color: aliceblue;
+}
+textarea::placeholder {
+  color: #c2c2c2; /* Set the desired color */
+}
+input::placeholder {
+  color: #c2c2c2;  /* Set the desired color */
+}
+.send-buttom{
+  cursor: pointer;
+  width:100px;
+  border-radius: 7px;
+  border:none;
+  background-color:  rgb(244, 244, 244);
+  margin-top: 10px;;
+  padding:5px 5px 5px 15px ;
+  position: center;
+}
+.send-buttom:hover{
+  color:#c2c2c2;
+  background-color: aliceblue;
+  box-shadow: 0 0 10px 5px rgba(119, 235, 255, 0.2) inset;
+  box-shadow: 0 0 50px 5px rgba(0, 47, 255, 0.2);
+}
+.iconContainer{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+  height:50px;
+  width: 50%;
+}
+.icons{
+  padding:2px;
+  width:33px;
+  margin: 10px;  
+  border-radius: 2px;;
+}
+.icons:hover{
+  background-color: aliceblue;
+  box-shadow: 0 0 2px 2px rgba(119, 235, 255, 0.1) inset;
+  box-shadow: 0 0 20px 5px rgba(0, 47, 255, 0.1);
+  opacity: 0.9;
 
 }

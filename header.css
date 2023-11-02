@@ -8,10 +8,10 @@
       text-decoration: none;
       cursor:pointer;
       font-size: 20px;   
-      color:#000000;
+      color:#000000;     
     }
     .name-yang-xin:hover{
-      opacity: 0.5;
+      color:rgb(0, 0, 0, 0.5);   
     }
     .menu-icon {
     cursor: pointer;
@@ -21,13 +21,18 @@
     transform: rotate(5deg);
 }
 .bar {
-    width: 25px;
-    height: 2.5px;
+    width: 30px;
+    height: 4px;
     border-radius: 1px;
     background-color: #000000;
     margin: 5px;
     transition: 0.4s;
 }
+
+.bar:hover{
+  transform: rotate(45deg); 
+  }
+
 .menu-icon:hover{ 
   opacity: 0.5;
 }

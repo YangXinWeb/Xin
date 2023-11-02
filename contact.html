@@ -34,32 +34,25 @@
 
 
   <div class="container">
+      <div></div>
+      <div>
+          <div class="iconContainer">
+            <a href="https://www.instagram.com/yangxinoo/?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr"> <img class="icons" src="pictures/Contact/inst.png" alt="Image Description"></a>   
+            <a href="https://y-ang.xin/-mingingProject.html"> <img class="icons" src="pictures/Contact/wechat.png" alt="Image Description"></a>  
+            <a href="https://m.weibo.cn/u/6133756388?t=0&luicode=10000011&lfid=100103type%3D3%26q%3D边力力%26t%3D"> <img class="icons" src="pictures/Contact/weibo.png" alt="Image Description"></a> 
+          </div>
 
-    <div></div>
-    <div>
+          <form  method = "post">
+              <h3 class="sendMessage">Message</h3>
+              <input class="contact-input"    type="text" placeholder="Name" id="name" autocomplete="off">
+              <input class="contact-input"    type="email" placeholder="Email" id="email" autocomplete="off">
+              <input class="contact-input"    type="text" placeholder="Subject" id="subject" autocomplete="off">
+              <textarea class="contact-input"  id="message" placeholder="Message" cols="30" rows="10"></textarea>  
+              <button class="send-buttom"    id="btn">Send</button>
+          </form>
+      </div>
+  </div>  
 
-  <div class="iconContainer">
-    <a href="https://www.instagram.com/yangxinoo/?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr"> <img class="icons" src="pictures/Contact/inst.png" alt="Image Description"></a>   
-    <a href="https://y-ang.xin/-mingingProject.html"> <img class="icons" src="pictures/Contact/wechat.png" alt="Image Description"></a>  
-    <a href="https://m.weibo.cn/u/6133756388?t=0&luicode=10000011&lfid=100103type%3D3%26q%3D边力力%26t%3D"> <img class="icons" src="pictures/Contact/weibo.png" alt="Image Description"></a> 
-  </div>
-
-  <form  method = "post">
-      <h3 class="sendMessage">Message</h3>
-      <input class="contact-input"    type="text" placeholder="Name" id="name" autocomplete="off">
-
-      <input class="contact-input"    type="email" placeholder="Email" id="email" autocomplete="off">
-
-      <input class="contact-input"    type="text" placeholder="Subject" id="subject" autocomplete="off">
-
-      <textarea class="contact-input"  id="message" placeholder="Message" cols="30" rows="10"></textarea>
-    
-      <button class="send-buttom"    id="btn">Send</button>
-  </form>
-
-  </div>
-
-    </div>
   <script>
     var btn = document.getElementById ('btn');
     btn.addEventListener ('click', function(e){
@@ -69,22 +62,20 @@
         var  email= document.getElementById ('email'). value;
         var subject = document.getElementById ('subject'). value;
         var message = document.getElementById ('message'). value;
+
         var body = 'name:' + name + '<br/> email:' + email +'<br/> subject:' + subject + '<br/> message:' + message;
-        console.log (body);
 
         Email.send({
           SecureToken : "4a4a1b98-00c1-4472-b3a4-b555f740a428",
           To : 'zuoxin0027@gmail.com',
           From : "yangxin0027@gmail.com",
-          Subject : "New Contact",
-          Body : "And this is the body"
+          Subject : "From y-ang.xin",
+          Body : body
         }).then(
         message => alert(message)
       ); 
     })
-
   </script>
-
 
     <footer class="copy-right">
       <p>&copy; 2023 YangXin. All rights reserved.</p>

@@ -12,7 +12,7 @@ form {
   display:flex;
   flex-direction: column;
   height:300px;
-  width: 40%;
+  width: 50%;
 }
 .sendMessage:hover{
   color: rgb(223, 238, 251);

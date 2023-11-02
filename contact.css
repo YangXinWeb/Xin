@@ -38,9 +38,7 @@ background-color: aliceblue;
 box-shadow: 0 0 30px 5px rgba(0, 47, 255, 0.4);
 transform: rotate(45deg); 
 }
-.menu-icon:hover{ 
 
-}
 /* Style for the menu (initially hidden) */
 .menu {
 font-family: Arial, Helvetica, sans-serif;

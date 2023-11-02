@@ -50,20 +50,34 @@
               <textarea class="contact-input"  id="message" placeholder="Message" cols="30" rows="10"></textarea>  
               <button class="send-buttom"    id="btn">Send</button>
           </form>
+   <!-- popup -->
+          <div id="popup" class="popup" style="display: none;"> 
+            <div class="popup-content">
+                <button id="close-popup">SENT SUCCESSFULLY</button>
+            </div>
+          </div>   
+<!-- popup --> 
       </div>
   </div>  
 
   <script>
     var btn = document.getElementById ('btn');
     btn.addEventListener ('click', function(e){
-        e.preventDefault();
+        e.preventDefault(); popup.style.display = 'block'; // Show the popup
 
         var name = document.getElementById ('name'). value;
         var  email= document.getElementById ('email'). value;
         var subject = document.getElementById ('subject'). value;
         var message = document.getElementById ('message'). value;
 
-        var body = 'name:' + name + '<br/> email:' + email +'<br/> subject:' + subject + '<br/> message:' + message;
+        var body = 'name: ' + name + '<br/> email: ' + email +'<br/> subject: ' + subject + '<br/> message: ' + message;
+
+      ////////
+        document.getElementById('close-popup').addEventListener('click', function() {
+            // Close the popup when the "Close" button is clicked
+            popup.style.display = 'none';
+        });
+      ////////
 
         Email.send({
           SecureToken : "4a4a1b98-00c1-4472-b3a4-b555f740a428",
@@ -72,7 +86,7 @@
           Subject : "From y-ang.xin",
           Body : body
         }).then(
-        message => alert(message)
+  
       ); 
     })
   </script>

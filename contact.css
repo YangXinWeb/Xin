@@ -68,5 +68,51 @@ input::placeholder {
   box-shadow: 0 0 2px 2px rgba(119, 235, 255, 0.1) inset;
   box-shadow: 0 0 20px 5px rgba(0, 47, 255, 0.1);
   opacity: 0.9;
-
 }
+
+.popup {
+  background:rgba(255, 255, 255, 0.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {  
+  margin-top: 25%;
+  margin-left: 10%;
+  width:80%;
+  height:17px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: rgb(231, 235, 244);
+  box-shadow: 0 0 260px 20px rgba(0, 47, 255, 0.3);
+  transition: box-shadow 0.5s, background-color 0.5s;
+}
+
+.popup-content:hover{
+  background-color: rgb(222, 226, 238, 0.1); 
+  box-shadow: 0 0 30px 10px rgba(0, 47, 255, 0.2);
+}
+
+#close-popup {
+  font-size: 14px;
+  background: none;
+  color: #3b3b3b;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
+

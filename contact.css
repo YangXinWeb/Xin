@@ -1,5 +1,5 @@
 .container{
-  padding:120px 0px 150px 0px;  
+  padding:190px 0px 150px 0px;  
   display:grid;
   grid-template-columns:1fr 3fr;
   min-width: 400px;

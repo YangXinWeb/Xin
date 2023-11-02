@@ -148,7 +148,7 @@ input::placeholder {
 }
 
 .popup {
-  background:rgba(255, 255, 255, 0.85);
+  background:rgba(0, 0, 0, 0.85);
   position: fixed;
   top: 0;
   left: 0;
@@ -164,26 +164,26 @@ input::placeholder {
   margin-top: 25%;
   margin-left: 10%;
   width:80%;
-  height:17px;
+  height:15px;
   padding: 10px;
   border: none;
   border-radius: 5px;
   text-align: center;
   border-radius: 50%;
   background-color: rgb(231, 235, 244);
-  box-shadow: 0 0 260px 20px rgba(0, 47, 255, 0.3);
+  box-shadow: 0 0 300px 20px rgba(0, 47, 255, 0.3);
   transition: box-shadow 0.5s, background-color 0.5s;
 }
 
 .popup-content:hover{
-  background-color: rgb(222, 226, 238, 0.1); 
-  box-shadow: 0 0 30px 10px rgba(0, 47, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 0 30px 10px rgba(0, 47, 255, 0.6);
 }
 
 #close-popup {
-  font-size: 14px;
+  font-size: 15px;
   background: none;
-  color: #3b3b3b;
+  color: #595959;
   border: none;
   cursor: pointer;
 }

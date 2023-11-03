@@ -3,6 +3,7 @@
       position: fixed;
       margin:10px 20px 20px 20px;  
       transform: rotate(0deg); 
+      z-index: 1;
     }
     .name-yang-xin {
       text-decoration: none;
@@ -11,7 +12,8 @@
       color:#000000;     
     }
     .name-yang-xin:hover{
-      color:rgb(0, 0, 0, 0.5);   
+      color:aliceblue;
+      text-shadow:  0px 0px 40px rgba(0, 47, 255, 1);     
     }
     .menu-icon {
     cursor: pointer;
@@ -30,6 +32,9 @@
 }
 
 .bar:hover{
+  width: 30px;
+  background-color: aliceblue;
+  box-shadow: 0 0 30px 5px rgba(0, 47, 255, 0.4);
   transform: rotate(45deg); 
   }
 

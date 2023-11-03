@@ -7,7 +7,7 @@
     .name-yang-xin {
       text-decoration: none;
       cursor:pointer;
-      font-size: 20px;   
+      font-size: 26px;   
       color:#000000;     
     }
     .name-yang-xin:hover{
@@ -39,7 +39,7 @@
 /* Style for the menu (initially hidden) */
 .menu {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 11px;
+    font-size: 13px;
     list-style-type: none;
     width: 30px;
     padding-top:20;

@@ -13,6 +13,17 @@
   width:80%;
   border-radius: 3px;
   margin:10px;
+  animation: move 30s linear infinite, pulse 15s alternate infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+      transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }         
 }
 .work-covers:hover {
   opacity:0.8;
@@ -21,7 +32,7 @@
   margin-top:-5px;
   margin-left:10px;
   color:rgb(0, 0, 0);
-  font-size: 11px;
+  font-size: 13px;
   cursor: pointer;
 }
 .cover-text-title:hover{

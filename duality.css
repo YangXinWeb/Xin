@@ -17,8 +17,16 @@
   min-width: 300px;
   display: block;
 }
+
+/* hide the video play panel*/
+.w-body-video::-webkit-media-controls,
+.w-body-video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+
 .tiltle-works{
-  margin-top: 8px;
+  margin-top: px;
   font-size: 12px;
   color:black;
 }

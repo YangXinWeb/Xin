@@ -48,7 +48,7 @@ width: 30px;
 padding-top:20;
 margin-top: 10px;
 position: absolute;
-background-color: #ffffff46;
+background-color: rgba(0, 47, 255, 0);
 display: none;
 }
 .menu li {

@@ -25,6 +25,12 @@
   display: none !important;
 }
 
+.work-picture{
+  width: 100%;
+  min-width: 300px;
+  display: block;
+
+}
 
 .tiltle-works{
   margin-top: px;

@@ -38,9 +38,9 @@ function windowResized() {
               this.x = x;
               this.y = y;
               this.alpha = 225;
-              this.size = random(1, 4);
-              this.velocityX = random(1, 1);
-              this.velocityY = random(0.8, 0.8);
+              this.size = random(1, 6);
+              this.velocityX = random(0.5, 0.5);
+              this.velocityY = random(0.2, 0.3);
           }
 
           finished() {

@@ -1,47 +1,180 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> Home Page </title>
-    <link rel="stylesheet" href="header.css">
-  </head>
+<head>
+    <title>Simple Particle Text Effect</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 
-  <body>
-    <div class="header-yang-xin">
-      
-      <bottom class="name-yang-xin">Xin Yang</bottom>
-    
-      <div class="menu-icon" id="menu-icon">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
+    <style>
+     body, html {
+    cursor:none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
 
-      <!-- Menu (initially hidden) -->
-      <ul class="menu" id="menu">
-        <li><a href="https://y-ang.xin/">Works</a></li>
-        <li><a href="https://y-ang.xin/-Bio.html">Bio</a></li>
-        <li><a href="https://y-ang.xin/contact.html">Contact</a></li>
-      </ul>
-    </div>
+#custom-cursor {
+    width: 0px; /* Cursor size */
+    height: 0px; /* Cursor size */
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    pointer-events: none; /* Ignore the cursor itself for click events */
+    z-index: 1000; /* Ensure it's above other elements */
+}
 
-    <script src="header.js"></script>
-    
-    <div style = "
-    padding-top:100px;
-    padding-left:120px;
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr 1fr;
-    ">
-      <div style="background-color: rgb(233, 255, 255);margin: 10px;
-      height:1000px;
-      ">1</div>
-      <div style="background-color: rgb(251, 236, 230);margin: 10px;
-      ">2</div>
-      <div style="background-color: rgb(240, 227, 255);margin: 10px;
-      ">3</div>
-      <div style="background-color: rgb(223, 238, 252);margin: 10px;
-      ">3</div>
-    </div>
+* {
+  cursor: none;
+}
 
-  </body>
+#particleCanvas {
+    top: 0;
+    left: 0;
+    z-index: 10; /* Higher z-index */
+}
+
+#xinStudio {
+    width: 450px;
+    height:40px;
+    font-size: 40px; 
+    border: none;
+    background-color: transparent;
+    color: rgb(0, 0, 0, 0.4);  
+    text-shadow:  0px 0px 3px rgb(0, 0, 0);   
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; 
+    transition: text-shadow 0.3s, color 0.4s;
+}
+
+#xinStudio:hover {
+    color: rgba(135, 134, 134, 0.01);  
+    text-shadow:  0px 0px 10px rgb(255, 0, 0);    
+}
+
+    </style>
+</head>
+<body>
+    <a  href="https://y-ang.xin/"  >
+        <button  id="xinStudio" >  Yang Xin's Studio   </button>
+    </a>
+  
+    <canvas id="particleCanvas"></canvas>
+    <div id="custom-cursor"></div>
+
+    <script>
+        document.getElementById('xinStudio').addEventListener('click', function() {
+            this.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+            this.style.color = '#000';
+            // Add more click actions as needed
+        });
+    </script>
+
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.getElementById('custom-cursor');
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+    </script>
+
+
+    <script>
+
+const canvas = document.getElementById('particleCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+// Mouse position
+const mouse = {
+    x: null,
+    y: null,
+    radius: 180 // Radius of impact
+};
+
+// Mouse event
+window.addEventListener('mousemove', function(event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
+});
+
+// Create particle
+class Particle {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 2 +1;
+        this.baseX = this.x;
+        this.baseY = this.y;
+        this.density = Math.random() * 30 + 1;
+    }
+
+    draw() {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    update() {
+        let dx = mouse.x - this.x;
+        let dy = mouse.y - this.y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+        let forceDirectionX = dx / distance;
+        let forceDirectionY = dy / distance;
+        let maxDistance = mouse.radius;
+        let force = (maxDistance - distance) / maxDistance;
+        let directionX = forceDirectionX * force * this.density;
+        let directionY = forceDirectionY * force * this.density;
+
+        if (distance < mouse.radius) {
+            this.x -= directionX;
+            this.y -= directionY;
+        } else {
+            if (this.x !== this.baseX) {
+                let dx = this.x - this.baseX;
+                this.x -= dx / 10;
+            }
+            if (this.y !== this.baseY) {
+                let dy = this.y - this.baseY;
+                this.y -= dy / 10;
+            }
+        }
+    }
+}
+
+// Initialize particles
+function init() {
+    particles = [];
+    for (let i = 0; i < 8500; i++) {
+        let x = Math.random() * canvas.width;
+        let y = Math.random() * canvas.height;
+        particles.push(new Particle(x, y));
+    }
+}
+
+// Animate particles
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < particles.length; i++) {
+        particles[i].draw();
+        particles[i].update();
+    }
+    requestAnimationFrame(animate);
+}
+
+init();
+animate();
+
+    </script>
+
+
+
+
+</body>
 </html>

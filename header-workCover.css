@@ -21,7 +21,7 @@ body {
 }
 .name-yang-xin {
   text-decoration: none;
-  font-size: 26px;   
+  font-size: 24px;   
   color:#000000;
   transition: text-shadow 0.3s, color 0.3s;
   
@@ -38,9 +38,9 @@ transform: rotate(5deg);
 }
 .bar {
 width: 30px;
-height: 4px;
+height: 3px;
 border-radius: 1px;
-background-color: #000000;
+background-color: #ff0000;
 margin: 5px;
 transition: 0.4s;
 }
@@ -48,7 +48,7 @@ transition: 0.4s;
 .bar:hover{
 width: 30px;
 background-color: aliceblue;
-box-shadow: 0 0 30px 5px rgba(255,0,0, 0.4);
+box-shadow: 0 0 30px 5px rgba(255,0,0, 0.5);
 transform: rotate(45deg); 
 }
 

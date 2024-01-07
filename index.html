@@ -1,134 +1,180 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> Home Page </title>
-    <link rel="stylesheet" href="header-workCover.css">
-    <link rel="stylesheet" href="works.css"> 
- 
+<head>
+    <title>Simple Particle Text Effect</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-  </head>
 
-  <body>
-    <div class="header-yang-xin">
-      <a href="https://y-ang.xin/"  class="name-yang-xin" > <p>Xin Yang</p></a>
-          
-      <div class="menu-icon" id="menu-icon">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
+    <style>
+     body, html {
+    cursor:none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
 
-    <!-- Menu (initially hidden) -->
-      <ul class="menu" id="menu">
-        <li><a href="https://y-ang.xin/">Works</a></li>
-        <li><a href="https://y-ang.xin/-Bio.html">Bio</a></li>
-        <li><a href="https://y-ang.xin/contact.html">Contact</a></li>
-      </ul>
-    </div>
+#custom-cursor {
+    width: 0px; /* Cursor size */
+    height: 0px; /* Cursor size */
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    pointer-events: none; /* Ignore the cursor itself for click events */
+    z-index: 1000; /* Ensure it's above other elements */
+}
 
-    <script src="header.js"></script>
-    <script src="mouse.js"></script>
+* {
+  cursor: none;
+}
 
-     
-    
-    <div class="workCovers-contents">
+#particleCanvas {
+    top: 0;
+    left: 0;
+    z-index: 10; /* Higher z-index */
+}
 
-      <div>
-        <a href="#">  <img class="work-covers" src="pictures/Message.jpg" alt="Image Description"></a>       
-        <p class="cover-text-title">Messages</p>
-        <p class="cover-text">2023</p>
-      </div>
+#xinStudio {
+    width: 450px;
+    height:40px;
+    font-size: 40px; 
+    border: none;
+    background-color: transparent;
+    color: rgb(0, 0, 0, 0.4);  
+    text-shadow:  0px 0px 3px rgb(0, 0, 0);   
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; 
+    transition: text-shadow 0.3s, color 0.4s;
+}
 
-      <div>
-        <a href="#">   <img class="work-covers" src="pictures/Twins Project.jpg" alt="Image Description"></a>          
-        <p class="cover-text-title">Twins</p>
-        <p class="cover-text">2023</p>
-      </div>
+#xinStudio:hover {
+    color: rgba(135, 134, 134, 0.01);  
+    text-shadow:  0px 0px 10px rgb(255, 0, 0);    
+}
 
-      <div>
-        <a href="https://y-ang.xin/-Duality.html"> <img class="work-covers" src="pictures/waitingSevenAndHalfDays.jpg" alt="Image Description"> </a>   
-        <p class="cover-text-title" href="https://y-ang.xin/-Duality.html">Duality</p>
-        <p class="cover-text">2023</p>
-      </div>
+    </style>
+</head>
+<body>
+    <a  href="https://y-ang.xin/"  >
+        <button  id="xinStudio" >  Yang Xin's Studio   </button>
+    </a>
+  
+    <canvas id="particleCanvas"></canvas>
+    <div id="custom-cursor"></div>
 
-      <div>
-        <a href="#">  <img class="work-covers" src="pictures/EMirage.gif" alt="Image Description"></a>       
-        <p class="cover-text-title">EMirage</p>
-        <p class="cover-text">2023</p>
-      </div>
+    <script>
+        document.getElementById('xinStudio').addEventListener('click', function() {
+            this.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+            this.style.color = '#000';
+            // Add more click actions as needed
+        });
+    </script>
 
-      <div>
-        <a href="https://y-ang.xin/-mingingProject.html"> <img class="work-covers" src="pictures/FingerP.jpg" alt="Image Description"></a>         
-        <p class="cover-text-title">Mining Project</p>
-        <p class="cover-text">2023</p>
-      </div>
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.getElementById('custom-cursor');
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+    </script>
 
-      <div>
-        <a href="https://y-ang.xin/-Biota-2.html"> <img class="work-covers" src="pictures/Biota-2.gif" alt="Image Description"></a>                
-        <p class="cover-text-title">Biota-2</p>
-        <p class="cover-text">2021</p>
-      </div>
-          
-      <div>
-        <a href="https://y-ang.xin/-BiotaSculpture.html">  <img class="work-covers" src="pictures/Biota-s.jpg" alt="Image Description"></a>        
-        <p class="cover-text-title">Biota-Sculpture</p>
-        <p class="cover-text">2021</p>
-      </div>
-           
-      <div>
-        <a href="https://y-ang.xin/-Biota-1.html">  <img class="work-covers" src="pictures/Biota.jpg" alt="Image Description"></a>       
-        <p class="cover-text-title">Biota-1</p>
-        <p class="cover-text">2021</p>
-      </div>
 
-      <div>
-        <a href="https://y-ang.xin/-Lizijie.html">  <img class="work-covers" src="pictures/LiziJie.jpg" alt="Image Description"></a>        
-        <p class="cover-text-title">LiziJie Project</p>
-        <p class="cover-text">2021</p>
-      </div>
+    <script>
 
-      <div>
-        <a href="https://y-ang.xin/-AskTheDust.html">  <img class="work-covers" src="pictures/AskTheDust.jpg" alt="Image Description"></a>        
-        <p class="cover-text-title">Ask The Dust</p>
-        <p class="cover-text">2021</p>
-      </div>
+const canvas = document.getElementById('particleCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-      <div>
-        <a href="https://y-ang.xin/-TestTube.html"> <img class="work-covers" src="pictures/TestTube-cover.jpg" alt="Image Description"></a>        
-        <p class="cover-text-title">Test Tube Installation</p>
-        <p class="cover-text">2021</p>
-      </div>
+let particles = [];
 
-      <div>
-        <a href="https://y-ang.xin/-MicroPortraits.html"> <img class="work-covers" src="pictures/Micro Portraits.jpg" alt="Image Description"></a>       
-        <p class="cover-text-title">Micro Portraits</p>
-        <p class="cover-text">2017</p>
-      </div>
+// Mouse position
+const mouse = {
+    x: null,
+    y: null,
+    radius: 180 // Radius of impact
+};
 
-       <div>
-        <a href="-invisibleGame.html">   <img class="work-covers" src="pictures/InvisibleGame.jpg" alt="Image Description"></a>       
-        <p class="cover-text-title">Invisible Games</p>
-        <p class="cover-text">2016-</p>
-      </div>
-      
-      <div>
-        <a href="https://y-ang.xin/-OriginalSeries.html">  <img class="work-covers" src="pictures/original-S-cover.jpg" alt="Image Description"></a> 
-       
-        <p class="cover-text-title">Original Series</p>
-        <p class="cover-text">2016-</p>
-      </div>
-       <div>
-        <a href="https://y-ang.xin/-pantingLab.html"> <img class="work-covers" src="pictures/P-cover.jpg" alt="Image Description"></a>         
-        <p class="cover-text-title">Painting Lab</p>
-        <p class="cover-text">2012-</p>
-      </div>
-      
-    </div>
+// Mouse event
+window.addEventListener('mousemove', function(event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
+});
 
-    <footer class="copy-right">
-      <p>&copy; 2023 YangXin. All rights reserved.</p>
-    </footer>
+// Create particle
+class Particle {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 2 +1;
+        this.baseX = this.x;
+        this.baseY = this.y;
+        this.density = Math.random() * 30 + 1;
+    }
 
-    <script src="mouse.js"></script>
-  </body>
+    draw() {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    update() {
+        let dx = mouse.x - this.x;
+        let dy = mouse.y - this.y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+        let forceDirectionX = dx / distance;
+        let forceDirectionY = dy / distance;
+        let maxDistance = mouse.radius;
+        let force = (maxDistance - distance) / maxDistance;
+        let directionX = forceDirectionX * force * this.density;
+        let directionY = forceDirectionY * force * this.density;
+
+        if (distance < mouse.radius) {
+            this.x -= directionX;
+            this.y -= directionY;
+        } else {
+            if (this.x !== this.baseX) {
+                let dx = this.x - this.baseX;
+                this.x -= dx / 10;
+            }
+            if (this.y !== this.baseY) {
+                let dy = this.y - this.baseY;
+                this.y -= dy / 10;
+            }
+        }
+    }
+}
+
+// Initialize particles
+function init() {
+    particles = [];
+    for (let i = 0; i < 8500; i++) {
+        let x = Math.random() * canvas.width;
+        let y = Math.random() * canvas.height;
+        particles.push(new Particle(x, y));
+    }
+}
+
+// Animate particles
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < particles.length; i++) {
+        particles[i].draw();
+        particles[i].update();
+    }
+    requestAnimationFrame(animate);
+}
+
+init();
+animate();
+
+    </script>
+
+
+
+
+</body>
 </html>

@@ -1,25 +1,36 @@
+.myCanvasClass {
+  pointer-events: none;
+}
 
+body {
+  height: 100%;
+  margin: 0;
+  cursor: none; /* Hide the default cursor */
+}
+
+* {
+  cursor: none;
+}
+
+
+/*//////*/
 .header-yang-xin{
   font-family: Arial, Helvetica, sans-serif;
   position: fixed;
   margin:10px 20px 20px 20px;  
   transform: rotate(0deg); 
-  z-index: 1;
 }
 .name-yang-xin {
   text-decoration: none;
-  cursor:pointer;
   font-size: 26px;   
   color:#000000;
   transition: text-shadow 0.3s, color 0.3s;
-  
 }
 .name-yang-xin:hover{
   color:aliceblue;
-  text-shadow:  0px 0px 40px rgba(0, 47, 255, 1);     
+  text-shadow:  0px 0px 40px rgba(255,0,0, 1);     
 }
 .menu-icon {
-cursor: pointer;
 margin-top:20px;
 padding: 20px 10px 5px 7px;
 position: relative;
@@ -37,7 +48,7 @@ transition: 0.4s;
 .bar:hover{
 width: 30px;
 background-color: aliceblue;
-box-shadow: 0 0 30px 5px rgba(0, 47, 255, 0.4);
+box-shadow: 0 0 30px 5px rgba(255,0,0, 0.4);
 transform: rotate(45deg); 
 }
 
@@ -65,7 +76,7 @@ color: #000000;
 }
 .menu a:hover {
   color: aliceblue;
-  text-shadow:  0px 0px 30px rgba(0, 47, 255, 1); 
+  text-shadow:  0px 0px 30px rgba(255,0,0, 1); 
 }  
      
 .copy-right{

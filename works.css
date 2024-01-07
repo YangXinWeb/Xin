@@ -33,14 +33,16 @@
   margin-left:10px;
   color:rgb(0, 0, 0);
   font-size: 13px;
-  cursor: pointer;
 }
 .cover-text-title:hover{
-  opacity:0.5;
+  color:rgb(255, 0, 0);
 }
 .cover-text{
   margin-top:-10px;
   margin-left:10px;
   color:rgb(135, 135, 135);
   font-size: 11px;
+}
+.cover-text:hover{
+  color:rgb(255, 0, 0);
 }

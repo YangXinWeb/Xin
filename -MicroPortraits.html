@@ -5,6 +5,7 @@
       <title> Micro Portraits </title>
       <link rel="stylesheet" href="header.css">
       <link rel="stylesheet" href="w-body.css"> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   </head>
 
   <body>
@@ -27,6 +28,7 @@
     </div>
 
    <script src="header.js"></script>
+   <script src="mouse.js"></script>
     
     <div class="w-body">
       <img src="pictures/Works/Micro Portraits/MicroPortaints-4.jpg">
@@ -68,14 +70,15 @@
   
   <img id="image" src="pictures/elements/cell.gif" alt="Description of the image">
 	<script>
+
 		document.addEventListener("mousemove", function(event) {
 			var x = event.clientX;
-			var y = event.clientY;
+      var y = event.clientY + window.scrollY; // Add vertical scroll offset
 			var image = document.getElementById("image");
 
       
 			image.style.right = x + "px";
-			image.style.bottom = y + "px";
+			image.style.top = y + "px";
 		});
 	</script>
 

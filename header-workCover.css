@@ -86,3 +86,12 @@ color:#000000;
 font-size: 11px;
 bottom:8px;
 }
+
+@media (max-width: 600px) {
+  .content {
+      min-height: calc(100vh - 100px); /* Adjust for smaller screens */
+  }
+  .copy-right {
+      height: 100px; /* Adjust for smaller screens */
+  }
+}

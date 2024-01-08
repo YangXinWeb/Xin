@@ -1,83 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dynamic Ripple Background</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-        }
-        canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: rgb(255, 255, 255);
-        }
-    </style>
+    <title>Simple Particle Text Effect</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 </head>
+
 <body>
-    <canvas id="rippleCanvas"></canvas>
-    <script>
-
-const canvas = document.getElementById('rippleCanvas');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let colorIndex = 0;
-let colors = ['#000001', '#000003', '#000006', '#000009']; // Add more colors for smoother transitions
-let ripple;
-
-class Ripple {
-    constructor() {
-        this.x = canvas.width / 2;
-        this.y = canvas.height / 2;
-        this.size = 0;
-        this.maxSize = Math.max(canvas.width, canvas.height);
-        this.color = colors[colorIndex % colors.length];
-    }
-
-    update() {
-        if (this.size < this.maxSize) {
-            this.size += 2;
-            this.color = colors[Math.floor((colorIndex + this.size / 10) % colors.length)];
-        } else {
-            this.size = 0;
-            colorIndex++;
-        }
-    }
-
-    draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.globalAlpha = 1 - this.size / this.maxSize;
-        ctx.fill();
-    }
-}
-
-function init() {
-    ripple = new Ripple();
-}
-
-function animate() {
-    requestAnimationFrame(animate);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ripple.update();
-    ripple.draw();
-}
-
-init();
-animate();
-
-window.addEventListener('resize', function() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    ripple.maxSize = Math.max(canvas.width, canvas.height);
-});
-
-    </script>
+    <a  href="https://y-ang.xin/home.html"  >
+        <button  id="xinStudio" >  Yang Xin's Studio   </button>
+    </a>
+  
+    <canvas id="particleCanvas"></canvas>
+    <div id="custom-cursor"></div>
+    <script src="indexPraticles.js"></script>
 </body>
 </html>

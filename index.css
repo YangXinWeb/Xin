@@ -1,0 +1,52 @@
+body, html {
+  cursor:none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#custom-cursor {
+  width: 0px; /* Cursor size */
+  height: 0px; /* Cursor size */
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  pointer-events: none; /* Ignore the cursor itself for click events */
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+* {
+cursor: none;
+}
+
+#particleCanvas {
+  top: 0;
+  left: 0;
+  z-index: 10; /* Higher z-index */
+}
+
+#xinStudio {
+  width: 450px;
+  height:40px;
+  font-size: 40px; 
+  border: none;
+  background-color: transparent;
+  color: rgb(0, 0, 0, 0.4);  
+  text-shadow:  0px 0px 3px rgb(0, 0, 0);   
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; 
+  transition: text-shadow 0.3s, color 0.4s;
+}
+
+#xinStudio:hover {
+  color: rgba(135, 134, 134, 0.01);  
+  text-shadow:  0px 0px 10px rgb(255, 0, 0);    
+}
+
+
+.w-body-video{
+  z-index: 20;
+}

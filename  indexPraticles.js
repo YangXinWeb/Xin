@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Yang Xin</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-</head>
-
-<body>
-    <a  href="https://y-ang.xin/home.html"  >
-        <button  id="xinStudio" >  Yang Xin's Studio   </button>
-    </a>
-  
-    <canvas id="particleCanvas"></canvas>
-    <div id="custom-cursor"></div>
-
-    <video class="w-body-video" src="videos/Duality/01.mp4" controls autoplay muted loop></video> 
-
-    <script>
-        document.addEventListener('mousemove', (e) => {
+document.addEventListener('mousemove', (e) => {
   const cursor = document.getElementById('custom-cursor');
   cursor.style.left = e.clientX + 'px';
   cursor.style.top = e.clientY + 'px';
@@ -119,7 +100,3 @@ requestAnimationFrame(animate);
 
 init();
 animate();
-    </script>
-
-</body>
-</html>

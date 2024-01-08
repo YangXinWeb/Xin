@@ -10,7 +10,7 @@
 
 .work-covers{
   min-width: 100px;
-  width:80%;
+  width:60%;
   border-radius: 3px;
   margin:5px;
   animation: move 30s linear infinite, pulse 15s alternate infinite;
@@ -26,7 +26,8 @@
   }         
 }
 .work-covers:hover {
-  opacity:0.8;
+  opacity:0.1;
+  box-shadow: 0 0 20px 3px rgba(255,0,0, 1);
 }
 .cover-text-title{
   margin-top:-5px;

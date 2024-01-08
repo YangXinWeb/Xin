@@ -32,19 +32,20 @@ cursor: none;
   font-size: 40px; 
   border: none;
   background-color: transparent;
-  color: rgb(0, 0, 0, 0.4);  
-  text-shadow:  0px 0px 3px rgb(0, 0, 0);   
+  color: rgba(135, 134, 134, 0.01);  
+  text-shadow:  0px 0px 10px rgb(255, 0, 0);   
   position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1; 
-  transition: text-shadow 0.3s, color 0.4s;
+  transition: text-shadow 0.4s, color 0.4s;
 }
 
 #xinStudio:hover {
-  color: rgba(135, 134, 134, 0.01);  
-  text-shadow:  0px 0px 10px rgb(255, 0, 0);    
+  color: rgb(0, 0, 0, 0.4);  
+  text-shadow:  0px 0px 3px rgb(0, 0, 0);   
+ 
 }
 
 /* Add this to your CSS file or inside a <style> tag in your HTML */

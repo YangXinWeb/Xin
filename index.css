@@ -3,6 +3,7 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
+  background-color: rgb(255, 0, 0);
 }
 
 #custom-cursor {
@@ -42,8 +43,8 @@ cursor: none;
 }
 
 #xinStudio:hover {
-  color: rgba(135, 134, 134, 0.01);  
-  text-shadow:  0px 0px 10px rgb(255, 0, 0);    
+  color: rgba(255, 255, 255, 1);  
+  text-shadow:  0px 0px 10px rgb(255, 255, 255);    
 }
 
 /* Add this to your CSS file or inside a <style> tag in your HTML */

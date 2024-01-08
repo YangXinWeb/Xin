@@ -27,7 +27,7 @@ body {
   
 }
 .name-yang-xin:hover{
-  color:aliceblue;
+  color:rgb(255, 0, 0);
   text-shadow:  0px 0px 40px rgb(255, 0, 0);     
 }
 .menu-icon {
@@ -47,7 +47,7 @@ transition: 0.4s;
 
 .bar:hover{
 width: 30px;
-background-color: aliceblue;
+background-color:rgb(255, 0, 0);
 box-shadow: 0 0 30px 5px rgba(255,0,0, 0.5);
 transform: rotate(45deg); 
 }
@@ -75,7 +75,7 @@ text-decoration: none;
 color: #000000;
 }
 .menu a:hover {
-  color: aliceblue;
+  color: rgb(255, 0, 0);
   text-shadow:  0px 0px 30px rgb(255, 0, 0); 
 }  
      

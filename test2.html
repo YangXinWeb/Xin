@@ -1,202 +1,79 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> test2 </title>
-</style>
-    <link rel="stylesheet" href="header-workCover.css">
-    <link rel="stylesheet" href="works.css"> 
- 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-  </head>
-
-  <body>
-    <div class="header-yang-xin">
-      <a href="https://y-ang.xin/"  class="name-yang-xin" > <p>Xin Yang</p></a>
-          
-      <div class="menu-icon" id="menu-icon">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-
-    <!-- Menu (initially hidden) -->
-      <ul class="menu" id="menu">
-        <li><a href="https://y-ang.xin/">Works</a></li>
-        <li><a href="https://y-ang.xin/-Bio.html">Bio</a></li>
-        <li><a href="https://y-ang.xin/contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <script src="header.js"></script>
-
-    <script>
-    
-    let particles = [];
-
-    function setup() {
-      let canvas = createCanvas(windowWidth, document.body.scrollHeight);
-    canvas.style('position', 'absolute');
-    canvas.style('top', '0');
-    canvas.style('left', '0');
-    canvas.style('pointer-events', 'none'); // Allow mouse events to pass through the canvas
+<head>
+    <title>Image Magnifier</title>
+    <style>
+.img-magnifier-container {
+position: relative;
 }
 
-function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
+.img-magnifier-glass {
+position: absolute;
+border: 0px solid #000;
+border-radius: 50%;
+cursor: none;
+/* Size of the magnifier glass: */
+width: 200px;
+height: 200px;
 }
 
-      function draw() {
-    clear();  // Use clear() to maintain transparency and not cover other elements
-    let newParticle = new Particle(mouseX, mouseY);
-    particles.push(newParticle);
+    </style>
+</head>
+<body>
 
-    for (let particle of particles) {
-        particle.update();
-        particle.show();
-    }
+<div class="img-magnifier-container">
+  <img id="myimage" src="pictures/Biota-s.jpg" width="600" height="400">
+</div>
 
-    // Remove particles that are too old
-    particles = particles.filter(p => !p.finished());
+<script>
+ function magnify(imgID, zoom) {
+  var img, glass, w, h, bw;
+  img = document.getElementById(imgID);
+  glass = document.createElement("DIV");
+  glass.setAttribute("class", "img-magnifier-glass");
+  img.parentElement.insertBefore(glass, img);
+  glass.style.backgroundImage = "url('" + img.src + "')";
+  glass.style.backgroundRepeat = "no-repeat";
+  glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+  bw = 3;
+  w = glass.offsetWidth / 2;
+  h = glass.offsetHeight / 2;
+
+  glass.addEventListener("mousemove", moveMagnifier);
+  img.addEventListener("mousemove", moveMagnifier);
+
+  glass.addEventListener("touchmove", moveMagnifier);
+  img.addEventListener("touchmove", moveMagnifier);
+
+  function moveMagnifier(e) {
+    var pos, x, y;
+    e.preventDefault();
+    pos = getCursorPos(e);
+    x = pos.x;
+    y = pos.y;
+    if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+    if (x < w / zoom) {x = w / zoom;}
+    if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+    if (y < h / zoom) {y = h / zoom;}
+    glass.style.left = (x - w) + "px";
+    glass.style.top = (y - h) + "px";
+    glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+  }
+
+  function getCursorPos(e) {
+    var a, x = 0, y = 0;
+    e = e || window.event;
+    a = img.getBoundingClientRect();
+    x = e.pageX - a.left;
+    y = e.pageY - a.top;
+    x = x - window.pageXOffset;
+    y = y - window.pageYOffset;
+    return {x : x, y : y};
+  }
 }
 
-      function mousePressed() {
-          // Scatter particles when the mouse is clicked
-          for (let particle of particles) {
-              particle.scatter();
-          }
-      }
+magnify("myimage", 3);
 
-      class Particle {
-          constructor(x, y) {
-              this.x = x;
-              this.y = y;
-              this.alpha = 225;
-              this.size = random(1, 6);
-              this.velocityX = random(0.5, 0.5);
-              this.velocityY = random(0.2, 0.3);
-          }
-
-          finished() {
-              return this.alpha < 0;
-          }
-
-          update() {
-              this.x += this.velocityX;
-              this.y += this.velocityY;
-              this.alpha -= 5;
-          }
-
-          scatter() {
-              this.velocityX = random(-3, 3);
-              this.velocityY = random(-3, 3);
-          }
-
-          show() {
-              noStroke();
-              fill(255, 0, 0); // Red color
-              ellipse(this.x, this.y, this.size);
-          }
-      }
-      new p5(s);
-      </script>
-    
-    <div class="workCovers-contents">
-
-      <div>
-        <a href="#">  <img class="work-covers" src="pictures/Message.jpg" alt="Image Description"></a>       
-        <p class="cover-text-title">Messages</p>
-        <p class="cover-text">2023</p>
-      </div>
-
-      <div>
-        <a href="#">   <img class="work-covers" src="pictures/Twins Project.jpg" alt="Image Description"></a>          
-        <p class="cover-text-title">Twins</p>
-        <p class="cover-text">2023</p>
-      </div>
-
-      <div>
-        <a href="https://y-ang.xin/-Duality.html"> <img class="work-covers" src="pictures/waitingSevenAndHalfDays.jpg" alt="Image Description"> </a>   
-        <p class="cover-text-title" href="https://y-ang.xin/-Duality.html">Duality</p>
-        <p class="cover-text">2023</p>
-      </div>
-
-      <div>
-        <a href="#">  <img class="work-covers" src="pictures/EMirage.gif" alt="Image Description"></a>       
-        <p class="cover-text-title">EMirage</p>
-        <p class="cover-text">2023</p>
-      </div>
-
-      <div>
-        <a href="https://y-ang.xin/-mingingProject.html"> <img class="work-covers" src="pictures/FingerP.jpg" alt="Image Description"></a>         
-        <p class="cover-text-title">Mining Project</p>
-        <p class="cover-text">2023</p>
-      </div>
-
-      <div>
-        <a href="https://y-ang.xin/-Biota-2.html"> <img class="work-covers" src="pictures/Biota-2.gif" alt="Image Description"></a>                
-        <p class="cover-text-title">Biota-2</p>
-        <p class="cover-text">2021</p>
-      </div>
-          
-      <div>
-        <a href="https://y-ang.xin/-BiotaSculpture.html">  <img class="work-covers" src="pictures/Biota-s.jpg" alt="Image Description"></a>        
-        <p class="cover-text-title">Biota-Sculpture</p>
-        <p class="cover-text">2021</p>
-      </div>
-           
-      <div>
-        <a href="https://y-ang.xin/-Biota-1.html">  <img class="work-covers" src="pictures/Biota.jpg" alt="Image Description"></a>       
-        <p class="cover-text-title">Biota-1</p>
-        <p class="cover-text">2021</p>
-      </div>
-
-      <div>
-        <a href="https://y-ang.xin/-Lizijie.html">  <img class="work-covers" src="pictures/LiziJie.jpg" alt="Image Description"></a>        
-        <p class="cover-text-title">LiziJie Project</p>
-        <p class="cover-text">2021</p>
-      </div>
-
-      <div>
-        <a href="https://y-ang.xin/-AskTheDust.html">  <img class="work-covers" src="pictures/AskTheDust.jpg" alt="Image Description"></a>        
-        <p class="cover-text-title">Ask The Dust</p>
-        <p class="cover-text">2021</p>
-      </div>
-
-      <div>
-        <a href="https://y-ang.xin/-TestTube.html"> <img class="work-covers" src="pictures/TestTube-cover.jpg" alt="Image Description"></a>        
-        <p class="cover-text-title">Test Tube Installation</p>
-        <p class="cover-text">2021</p>
-      </div>
-
-      <div>
-        <a href="https://y-ang.xin/-MicroPortraits.html"> <img class="work-covers" src="pictures/Micro Portraits.jpg" alt="Image Description"></a>       
-        <p class="cover-text-title">Micro Portraits</p>
-        <p class="cover-text">2017</p>
-      </div>
-
-       <div>
-        <a href="-invisibleGame.html">   <img class="work-covers" src="pictures/InvisibleGame.jpg" alt="Image Description"></a>       
-        <p class="cover-text-title">Invisible Games</p>
-        <p class="cover-text">2016-</p>
-      </div>
-      
-      <div>
-        <a href="https://y-ang.xin/-OriginalSeries.html">  <img class="work-covers" src="pictures/original-S-cover.jpg" alt="Image Description"></a> 
-       
-        <p class="cover-text-title">Original Series</p>
-        <p class="cover-text">2016-</p>
-      </div>
-       <div>
-        <a href="https://y-ang.xin/-pantingLab.html"> <img class="work-covers" src="pictures/P-cover.jpg" alt="Image Description"></a>         
-        <p class="cover-text-title">Painting Lab</p>
-        <p class="cover-text">2012-</p>
-      </div>
-      
-    </div>
-
-    <footer class="copy-right">
-      <p>&copy; 2023 YangXin. All rights reserved.</p>
-    </footer>
-
-  </body>
+</script>
+</body>
 </html>

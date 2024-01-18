@@ -1,4 +1,7 @@
-
+body{
+  height: 100vh;
+  background-color: aqua;
+}
 
 .workCovers-contents {
     padding:120px 200px 150px 200px;  

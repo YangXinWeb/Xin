@@ -84,9 +84,7 @@ text-align: center;
 padding: 30px; 
 color:#000000;
 font-size: 11px;
-position: relative; 
 bottom:8px;
-background-color: aqua;
 }
 
 @media (max-width: 600px) {

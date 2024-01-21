@@ -10,7 +10,7 @@
         background-color: rgb(37, 37, 37);
         padding-top: 0px;
         padding-left:0px;
-        margin:-8px;
+        margin-bottom:-30px;
         font-family: Arial, Helvetica, sans-serif;  
       }
      
@@ -25,7 +25,7 @@
       .workGG{
         width: 85%;
         display: grid;
-        opacity: 90%;
+        opacity: 80%;
         grid-template-columns: repeat(6, 1fr); 
         justify-content: end; /* Aligns the grid items to the end (right side) */
         margin-left: 15%;
@@ -34,7 +34,7 @@
       .workGGGG{
         width: 70%;
         display: grid;
-        opacity: 90%;
+        opacity: 80%;
         grid-template-columns: repeat(5, 1fr); 
         justify-content: end; /* Aligns the grid items to the end (right side) */
         margin-left: 30%;
@@ -43,30 +43,46 @@
       .workGGG{
         width: 70%;
         display: grid;
-        opacity: 90%;
+        opacity: 80%;
         grid-template-columns: repeat(3, 1fr); 
         justify-content: end; /* Aligns the grid items to the end (right side) */
-        margin-left:30%;
-  
+        margin-left:30%; 
       }
 
+     .workGGGHLW{
+        border-radius: 50%;
+        overflow: hidden; /* Hides overflowed parts */
+        width: 90%;
+        display: grid;
+        opacity: 10%;
+        grid-template-columns: repeat(7, 1fr); 
+        justify-content: end; /* Aligns the grid items to the end (right side) */
+        margin-left:5%; 
+     }
+     
       .workGG img {
         width: 100%; /* Each image takes full width of its grid column */
         max-width: 100%; /* Prevents the image from exceeding its container */
-        opacity: 80%;
       }     
 
       .workGGG img {
         width: 100%; /* Each image takes full width of its grid column */
         max-width: 100%; /* Prevents the image from exceeding its container */
-        opacity: 80%;
       }  
 
       .workGGGG img {
         width: 100%; /* Each image takes full width of its grid column */
         max-width: 100%; /* Prevents the image from exceeding its container */
-        opacity: 80%;
       }  
+
+      .workGGGHLW img{
+        width: 100%; /* Each image takes full width of its grid column */
+        max-width: 100%; /* Prevents the image from exceeding its container */
+      }
+
+      .spacer{
+        height:50px;
+      }
       </style>
 </head>
 
@@ -96,13 +112,13 @@
 
    <img class="workG" src="pictures/Works/ThePathOfEvolution02/Tp01.gif" alt="Description of Image">
 
-   <div class="workGG" id="imageContainer">
+   <div class="workGG" id="imageContainer1">
     <img  src="pictures/Works/ThePathOfEvolution02/Tp01.gif" alt="Description of Image">
    </div>
 
 
    
-   <div class="workGGGG" id="imageContainer">
+   <div class="workGGGG" id="imageContainer2">
     <img  src="pictures/Works/ThePathOfEvolution02/Tp02.gif">
     <img  src="pictures/Works/ThePathOfEvolution02/Tp02.gif">
     <img  src="pictures/Works/ThePathOfEvolution02/Tp02.gif">
@@ -110,18 +126,41 @@
     <img  src="pictures/Works/ThePathOfEvolution02/Tp02.gif">
    </div>
 
-
-   <div class="workGGG">
+   <div class="workGGG" id="imageContainer3">
     <img  src="pictures/Works/ThePathOfEvolution02/Tp03.gif" >
     <img  src="pictures/Works/ThePathOfEvolution02/Tp03.gif" >
     <img  src="pictures/Works/ThePathOfEvolution02/Tp03.gif" >
    </div>
+
+   <div class="spacer"></div>
+
+   <div class="workGGGHLW" id="imageContainer4">
+    <img  src="pictures/Works/ThePathOfEvolution02/HLW.gif" >
+   </div>
+
+   <div class="spacer"></div>
+
+   <footer class="copy-right">
+    <p>&copy; 2024 YangXin. All rights reserved.</p>
+  </footer>
 
   </div>
 
-    <footer class="copy-right">
-      <p>&copy; 2024 YangXin. All rights reserved.</p>
-    </footer>
+  <script>
+    function populateImages(containerId, src, count) {
+        const container = document.getElementById(containerId);
+        for (let i = 0; i < count; i++) {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = "Description of Image";
+            container.appendChild(img);
+        }
+    }
+// Adjust numbers as needed
+    populateImages('imageContainer4', 'pictures/Works/ThePathOfEvolution02/HLW.gif', 67);
+</script>
+
+
  
 </body>
 </html>

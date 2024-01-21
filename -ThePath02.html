@@ -3,8 +3,56 @@
 <head>
       <title> The Path Of Evolution </title>
       <link rel="stylesheet" href="header.css">
-      <link rel="stylesheet" href="ThePath.css"> 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+   
+   <style>       
+      .w-body {
+        background-color: rgb(37, 37, 37);
+        padding-top: 0px;
+        padding-left:0px;
+        margin:-8px;
+        font-family: Arial, Helvetica, sans-serif;  
+      }
+     
+      .workG{
+        width:70%;
+        min-width: 300px;
+        opacity: 90%;
+        margin-left: 30%;
+        display: block;
+      }
+      
+      .workGG{
+        width: 85%;
+        display: grid;
+        opacity: 90%;
+        grid-template-columns: repeat(6, 1fr); 
+        justify-content: end; /* Aligns the grid items to the end (right side) */
+        margin-left: 15%;
+      }
+
+      .workGGG{
+        width: 80%;
+        display: grid;
+        opacity: 90%;
+        grid-template-columns: repeat(3, 1fr); 
+        justify-content: end; /* Aligns the grid items to the end (right side) */
+        margin-left:10%;
+  
+      }
+
+      .workGG img {
+        width: 100%; /* Each image takes full width of its grid column */
+        max-width: 100%; /* Prevents the image from exceeding its container */
+        opacity: 80%;
+      }     
+
+      .workGGG img {
+        width: 100%; /* Each image takes full width of its grid column */
+        max-width: 100%; /* Prevents the image from exceeding its container */
+        opacity: 80%;
+      }  
+      </style>
 </head>
 
 <body>
@@ -31,10 +79,25 @@
     
   <div class="w-body">
 
-    <img id="originalImage" class="work-picture" src="pictures/Works/ThePathOfEvolution02/Tp1.gif" alt="Description of Image">
+   <img class="workG" src="pictures/Works/ThePathOfEvolution02/Tp01.gif" alt="Description of Image">
+
+   <div class="workGG" id="imageContainer">
+    <img  src="pictures/Works/ThePathOfEvolution02/Tp01.gif" alt="Description of Image">
+   </div>
+
+
+   <img class="workG" src="pictures/Works/ThePathOfEvolution02/Tp02.gif" alt="Description of Image">
+   
+
+
+
+   <div class="workGGG">
+    <img  src="pictures/Works/ThePathOfEvolution02/Tp03.gif" >
+    <img  src="pictures/Works/ThePathOfEvolution02/Tp03.gif" >
+    <img  src="pictures/Works/ThePathOfEvolution02/Tp03.gif" >
+   </div>
 
   </div>
-
 
     <footer class="copy-right">
       <p>&copy; 2024 YangXin. All rights reserved.</p>

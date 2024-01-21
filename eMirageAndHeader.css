@@ -46,7 +46,7 @@ text-shadow:  0px 0px 20px rgba(255,0,0, 1);
 .menu-icon {
 margin-top:20px;
 padding: 20px 10px 5px 7px;
-position: relative;
+position: fixed;
 transform: rotate(5deg);
 }
 .bar {
@@ -110,13 +110,11 @@ height: 100px; /* Adjust for smaller screens */
 }
 
 .pText{
-  margin-top: 42%;
-  margin-left: 5%;
+  margin-top: -10px;
+  margin-left: 10%;
   width:90%;
   opacity: 50%;
   font-size: 14px;
   color: rgb(0, 0, 0);
   text-shadow:  0px 0px 3px rgba(74, 74, 74, 0.7);  
-  z-index: 3;
-  border: none;
 }

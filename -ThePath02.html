@@ -9,20 +9,44 @@
    <style>       
       .w-body {
         background-color: rgb(37, 37, 37);
+        width:100vw;
         padding-top: 0px;
         padding-left:0px;
         margin-bottom:-30px;
         font-family: Arial, Helvetica, sans-serif;  
-
-      } .fadeText {
+      } 
+      
+      .textContainer{
+        position: absolute; /* Absolute position */
+        top: 180px; /* Position from the top of the container */
+        left: 10px; /* Position from the left of the container */
+        width:45%;
+        min-width: 300px;
+      }
+      .fadeText {
         color:rgb(255, 255, 255);
         opacity: 0; /* Slightly visible initially */
         transform: translateY(-25px); /* Initially positioned slightly higher */
-        transition: opacity 4s, transform 4s; 
+        transition: opacity 4s, transform 4s;     
+        }
+
+        .theTittle{
+        font-size: 60px;
+        position: absolute;
+        top:0px;
+        right: 10px;
+        text-align: right; 
+        z-index: 2;
+        }
+
+        .textImageText{
+        font-size: 12px;
+        color:rgb(66, 66, 66);
+        width: 50%;
         position: absolute; /* Absolute position */
-        top: 170px; /* Position from the top of the container */
-        left: 10px; /* Position from the left of the container */
-        width:45%;
+        margin-top: -5px;
+        right: 10px; /* Position from the left of the container */
+        text-align: right; 
         }
      
       .workG{
@@ -121,18 +145,25 @@
     
   <div class="w-body">
 
-   <img class="workG" src="pictures/Works/ThePathOfEvolution02/Tp01.gif" alt="Description of Image">
+    <div class="theTittle" >
+      <p class="fadeText" > The Path Of Evolution-2 </p>
+    </div>
 
-   
+   <img class="workG" src="pictures/Works/ThePathOfEvolution02/Tp01.gif" alt="Description of Image">
+   <div class="textImageText">
+    <p>Zebrafish embryo lacks dorsal organizer, head, and body axis</p>
+    <p>Model Creatures</p>
+   </div>
+  
 
    <div id="scrollContainer">
-    <div class="fadeText">
-      <p >The canvas of evolution, painted with the strokes of genetic variation, natural selection, and environmental dynamics, spans the entire history of life on Earth. It is an ongoing saga, reflecting the intricate dance of organisms adapting to their environments and responding to selective pressures. This evolutionary narrative provides the backdrop against which the complexities of human influence unfold.
+    <div class="textContainer">
+      <p class="fadeText">The canvas of evolution, painted with the strokes of genetic variation, natural selection, and environmental dynamics, spans the entire history of life on Earth. It is an ongoing saga, reflecting the intricate dance of organisms adapting to their environments and responding to selective pressures. This evolutionary narrative provides the backdrop against which the complexities of human influence unfold.
       </p>
-      <p>
+      <p class="fadeText">
         The emergence of Homo sapiens ushered in a new chapter, one where consciousness and advanced cognitive abilities bestowed upon us the power of agency in the evolutionary drama. No longer passive participants, humans became architects of ecosystems, instigating habitat modifications, selective breeding, and intentional species introductions. The repercussions of our agency are visible in ecological imbalances, the decline of certain species, and the flourishing of others. Yet, this influence extends beyond mere biological shifts; it shapes the cultural, ethical, and societal fabric in which we are embedded.
       </p>
-      <p>
+      <p class="fadeText">
         Technology, as a manifestation of human ingenuity, has amplified our capacity to intervene in evolutionary processes. Genetic engineering, synthetic biology, and ecosystem management have become powerful tools in our hands. The promise of medical breakthroughs, enhanced agricultural yields, and environmental conservation is accompanied by ethical quandaries. Antibiotic resistance, genetically modified organisms, and unintended ecological consequences illustrate the intricate tapestry of our technological interventions.
       </p>
     </div>

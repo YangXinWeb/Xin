@@ -14,9 +14,20 @@
 }
 
 .w-body-video {
+  height: auto;
   width: 100%;
+  color: rgb(180, 49, 49);
   min-width: 300px;
   display: block;
+}
+
+.vTittle{
+  font-size: 12px;
+  position: absolute; 
+  right: 0px;
+  text-align: right; 
+  transform: translate(-5%, -100%);
+
 }
 
 /* hide the video play panel*/

@@ -18,7 +18,7 @@
   color:rgb(255, 255, 255);
   opacity: 0; /* Slightly visible initially */
   transform: translateY(-25px); /* Initially positioned slightly higher */
-  transition: opacity 4s, transform 4s;     
+  transition: opacity 6s, transform 6s;     
   }
 
   .theTittle{

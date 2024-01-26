@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolling Text</title>
+    <style>
+      body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.rolling-text-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+.rolling-text {
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: inline-block;
+}
+
+    </style>
+</head>
+<body>
+    <div class="rolling-text-container">
+        <p class="rolling-text">The canvas of evolution, painted with the strokes of genetic variation, natural selection, and environmental dynamics, spans the entire history of life on Earth. It is an ongoing saga, reflecting the intricate dance of organisms adapting to their environments and responding to selective pressures. This evolutionary narrative provides the backdrop against which the complexities of human influence unfold.
+
+          The emergence of Homo sapiens ushered in a new chapter, one where consciousness and advanced cognitive abilities bestowed upon us the power of agency in the evolutionary drama. No longer passive participants, humans became architects of ecosystems, instigating habitat modifications, selective breeding, and intentional species introductions. The repercussions of our agency are visible in ecological imbalances, the decline of certain species, and the flourishing of others. Yet, this influence extends beyond mere biological shifts; it shapes the cultural, ethical, and societal fabric in which we are embedded.
+          
+          Technology, as a manifestation of human ingenuity, has amplified our capacity to intervene in evolutionary processes. Genetic engineering, synthetic biology, and ecosystem management have become powerful tools in our hands. The promise of medical breakthroughs, enhanced agricultural yields, and environmental conservation is accompanied by ethical quandaries. Antibiotic resistance, genetically modified organisms, and unintended ecological consequences illustrate the intricate tapestry of our technological interventions.
+          </p>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    const rollingText = document.querySelector(".rolling-text");
+
+    document.addEventListener("scroll", function() {
+        const scrollValue = window.scrollY;
+        rollingText.style.transform = `translateY(${scrollValue}px)`;
+    });
+});
+
+    </script>
+</body>
+</html>

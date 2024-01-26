@@ -1,0 +1,111 @@
+.w-body {
+  background-color: rgb(37, 37, 37);
+  width:100vw;
+  padding-top: 0px;
+  padding-left:0px;
+  margin-bottom:-30px;
+  font-family: Arial, Helvetica, sans-serif;  
+} 
+
+.textContainer{
+  position: absolute; /* Absolute position */
+  top: 180px; /* Position from the top of the container */
+  left: 10px; /* Position from the left of the container */
+  width:45%;
+  min-width: 300px;
+}
+.fadeText {
+  color:rgb(255, 255, 255);
+  opacity: 0; /* Slightly visible initially */
+  transform: translateY(-25px); /* Initially positioned slightly higher */
+  transition: opacity 4s, transform 4s;     
+  }
+
+  .theTittle{
+  font-size: 60px;
+  position: absolute;
+  top:0px;
+  right: 10px;
+  text-align: right; 
+  z-index: 2;
+  }
+
+  .textImageText{
+  font-size: 12px;
+  color:rgb(66, 66, 66);
+  width: 50%;
+  position: absolute; /* Absolute position */
+  margin-top: -5px;
+  right: 10px; /* Position from the left of the container */
+  text-align: right; 
+  }
+
+.workG{
+  width:70%;
+  min-width: 300px;
+  opacity: 90%;
+  margin-left: 30%;
+  display: block;
+}
+
+.workGG{
+  width: 85%;
+  display: grid;
+  opacity: 80%;
+  grid-template-columns: repeat(6, 1fr); 
+  justify-content: end; /* Aligns the grid items to the end (right side) */
+  margin-left: 15%;
+}
+
+.workGGGG{
+  width: 70%;
+  display: grid;
+  opacity: 80%;
+  grid-template-columns: repeat(5, 1fr); 
+  justify-content: end; /* Aligns the grid items to the end (right side) */
+  margin-left: 30%;
+}
+
+.workGGG{
+  width: 70%;
+  display: grid;
+  opacity: 80%;
+  grid-template-columns: repeat(3, 1fr); 
+  justify-content: end; /* Aligns the grid items to the end (right side) */
+  margin-left:30%; 
+}
+
+.workGGGHLW{
+  border-radius: 50%;
+  overflow: hidden; /* Hides overflowed parts */
+  width: 90%;
+  display: grid;
+  opacity: 10%;
+  grid-template-columns: repeat(7, 1fr); 
+  justify-content: end; /* Aligns the grid items to the end (right side) */
+  margin-left:5%; 
+}
+
+.workGG img {
+  width: 100%; /* Each image takes full width of its grid column */
+  max-width: 100%; /* Prevents the image from exceeding its container */
+}     
+
+.workGGG img {
+  width: 100%; /* Each image takes full width of its grid column */
+  max-width: 100%; /* Prevents the image from exceeding its container */
+}  
+
+.workGGGG img {
+  width: 100%; /* Each image takes full width of its grid column */
+  max-width: 100%; /* Prevents the image from exceeding its container */
+}  
+
+.workGGGHLW img{
+  width: 100%; /* Each image takes full width of its grid column */
+  max-width: 100%; /* Prevents the image from exceeding its container */
+}
+
+.spacer{
+  height:50px;
+}

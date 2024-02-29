@@ -1,0 +1,32 @@
+.w-body img {
+  width: 100%;
+  min-width: 300px;
+  display: block;
+  background-color: rgb(70, 70, 70);
+}
+
+.w-body-video {
+  height: auto;
+  width: 100%;
+  color: rgb(180, 49, 49);
+  min-width: 300px;
+  display: block;
+}
+
+.download-buttom{
+  width:200px;
+  height: 30px;
+  border-radius: 7px;
+  border:none;
+  background-color:  rgb(244, 244, 244, 0.3);
+  position: fixed;
+  top: 20px; 
+  right: 20px; 
+  z-index: 1000;
+}
+.download-buttom:hover{
+  color:#ff0000;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.2) inset;
+  box-shadow: 0 0 50px 5px rgba(255, 0, 0, 0.2);
+}

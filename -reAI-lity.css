@@ -1,8 +1,37 @@
+body {
+  background-color: black;
+}
+
 .w-body img {
-  width: 100%;
-  min-width: 300px;
-  display: block;
-  background-color: rgb(70, 70, 70);
+  width: 30%;
+  min-width: 200px;
+  padding-left: 30%;
+}
+
+.w-note{
+  padding-top: 50px;
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  color:rgb(169, 168, 168);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  max-width: 1000px;
+}
+.w-note img{
+  padding-top: 5%;
+  width: 80%;
+  min-width: 200px;
+}
+
+.bold{
+  color:rgb(190, 190, 190);
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.row{
+  display:flex;
+  align-items: center;
 }
 
 .w-body-video {

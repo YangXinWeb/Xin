@@ -33,8 +33,9 @@ body {
 .w-note img{
   padding-top: 5%;
   padding-right:10px;
-  width: 80%;
-  min-width: 200px;
+  padding-left: 60px;
+  width: 30%;
+  min-width: 60px;
 }
 
 .bold{

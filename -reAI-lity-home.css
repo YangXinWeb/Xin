@@ -2,7 +2,7 @@
 .w-body {
   padding-top: 150px;
   padding-left:200px;
-  margin-right:150px;
+  margin-right:100px;
   min-width: 200px;
   display:grid;
   grid-template-columns:1fr;
@@ -117,7 +117,7 @@
 }
 
 .reAI-lity-icons img:hover{
-  width: 110%;
+  width: 102%;
 }
 
 .numbers{

@@ -56,18 +56,6 @@
   position:center;
 }
 
-.w-pictures-two{
-  padding-top: 20px;
-  padding-left:200px;
-  margin-right:150px;
-  min-width: 200px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  column-gap:20px;
-  row-gap: 20px;
-  font-family: Arial, Helvetica, sans-serif;  
-}
-
 .exhibition-title{
   margin-top: 8px;
   font-size: 12px;
@@ -117,7 +105,7 @@
 }
 
 .reAI-lity-icons img:hover{
-  width: 102%;
+  opacity: 80%;
 }
 
 .numbers{

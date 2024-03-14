@@ -90,7 +90,7 @@
   grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
   column-gap:2px;
   row-gap: 2px;
-  font-family: Arial, Helvetica, sans-serif;  
+  font-family: "Titillium Web", sans-serif;  
 }
 
 .reAI-lity-icons img{

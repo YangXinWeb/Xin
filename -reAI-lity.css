@@ -15,7 +15,6 @@ body {
   background-color:  rgba(255,0,0, 0.9) ;
 }
 
-
 .w-body img {
   width: 30%;
   min-width: 200px;
@@ -24,6 +23,7 @@ body {
 
 .w-note{
   padding-top: 50px;
+  padding-right: 10px;
   display:grid;
   grid-template-columns:1fr 2fr;
   color:rgb(151, 151, 151);

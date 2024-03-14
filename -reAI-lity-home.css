@@ -3,6 +3,7 @@
   padding-top:100px;
   padding-left:200px;
   margin-right:100px;
+  width:65%;
   min-width: 200px;
   display:grid;
   grid-template-columns:1fr;
@@ -26,11 +27,7 @@
   min-width: 300px;
   display: block;
 }
-.w-body-video {
-  width: 100%;
-  min-width: 300px;
-  display: block;
-}
+
 .tiltle-works{
   margin-top: 8px;
   font-size: 12px;

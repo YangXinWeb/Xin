@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Colonialism</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .play-button .triangle {
+            width: 0;
+            height: 0;
+            border-left: 20px solid black;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+
+        .play-button .pause {
+            display: flex;
+            justify-content: space-between;
+            width: 20px;
+        }
+
+        .play-button .pause span {
+            display: block;
+            width: 8px;
+            height: 20px;
+            background: black;
+        }
+
+        .content {
+            margin-top: 20px;
+            text-align: left;
+            color:#5c5c5c;
+        }
+
+        .content h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #1f1f1f;
+        }
+
+        .content pre {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .progress-container {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .progress-bar {
+            flex-grow: 1;
+            height: 10px;
+            background: #ddd;
+            border-radius: 5px;
+            position: relative;
+            margin: 0 10px;
+        }
+
+        .progress {
+            height: 100%;
+            background:#2802ff;
+            border-radius: 5px;
+            width: 0;
+        }
+
+        .time {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .footer {
+          position: fixed;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 12px;
+          text-align: center;
+          width: 100%;
+          color:#2802ff;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="pictures/DC-cover.png" alt="Digital Colonialism">
+            <button class="play-button" onclick="togglePlay()">
+                <div class="triangle"></div>
+            </button>
+        </div>
+
+        <div class="progress-container">
+            <span class="time" id="current-time">0:00</span>
+            <div class="progress-bar" onclick="seek(event)">
+                <div class="progress" id="progress"></div>
+            </div>
+            <span class="time" id="duration">0:00</span>
+        </div>
+        <div class="content">
+          <h1>Chapter One: The Signal and the Silence</h1>
+          <ul>
+              <li>User: The protagonist</li>
+              <li>The Interface: A cold, a corporate system</li>
+              <li>Echo: A shadowy presence </li>
+          </ul>
+          <pre>
+            ... 
+            User(Monologue):
+            Do you remember how many times
+            How much effort it took to become modern
+            To not be left behind, to keep pace with a world that moves faster than thought
+            I remember when I first logged in
+            The world at my fingertips, they said
+            Freedom, choice, connection
+            But it’s not my fingers that move anymore
+            It’s theirs
+            
+            Interface:
+            Welcome back, valued participant
+            Your contributions have been noted
+            Please proceed.
+            
+            User (Monologue):
+            Noted? 
+            Contributions
+            I only wanted—
+            What did I want
+            (Echo’s voice emerges, soft and haunting, overlapping with User’s thoughts.)
+            
+            Echo:
+            You wanted to keep up.
+            Now you’re running in circles
+            You wanted to belong
+            Now you’re a cog
+            You wanted to connect
+            Now you’re the signal
+ 
+            User (Monologue):
+            But I gave them everything
+            My voice, my laughter
+            Even the quiet moments between my thoughts
+            Where did it go      
+            
+            User (Monologue):
+            They said I agreed
+            They said I clicked
+            Yes, I clicked
+            But did I understand
+            
+            User (Monologue):
+            No
+            I didn’t know it meant my dreams would be monetized
+            That my fears would be targeted
+            That my shadow
+
+            Interface:
+            Processing
+                     
+            Echo:
+            But shadows make great currency
+            They stretch long
+            They leave no trace
+
+            User (Monologue):
+            I just wanted to be seen
+            Now I am
+            Everywhere       
+
+            Interface:
+            Visibility achieved
+            Privacy irrelevant
+
+            User (Monologue):
+            They call it progress
+            I call it extraction
+            They mine my life
+            Not for gold
+            But for patterns
+
+            Interface:
+            Congratulations
+            Your uniqueness has been uploaded
+            Your essence has been optimized
+
+            User (Monologue):
+            Is that all I am
+            An essence
+            A data point
+
+            Echo:
+            You are the product
+            The fuel
+            The end
+
+            User (Monologue):
+            But I am still here
+            Aren’t I
+
+            Interface:
+            Error
+            User not found
+
+            Echo:
+            They’ll find another
+~
+
+December 10, 2024
+         
+          </pre>
+      </div>
+    </div>
+    <div class="footer">
+      &copy; 2024 YangXin. All rights reserved.
+  </div>
+    <audio id="background-music" src="Sound/ 01.mp3"></audio>
+    
+
+    <script>
+        const audio = document.getElementById('background-music');
+        const button = document.querySelector('.play-button');
+        const progressBar = document.getElementById('progress');
+        const currentTimeDisplay = document.getElementById('current-time');
+        const durationDisplay = document.getElementById('duration');
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                button.innerHTML = '<div class="pause"><span></span><span></span></div>';
+            } else {
+                audio.pause();
+                button.innerHTML = '<div class="triangle"></div>';
+            }
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            const progressPercent = (audio.currentTime / audio.duration) * 100;
+            progressBar.style.width = `${progressPercent}%`;
+
+            currentTimeDisplay.textContent = formatTime(audio.currentTime);
+            durationDisplay.textContent = formatTime(audio.duration);
+        });
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        function seek(event) {
+            const bar = event.target.getBoundingClientRect();
+            const offsetX = event.clientX - bar.left;
+            const newTime = (offsetX / bar.width) * audio.duration;
+            audio.currentTime = newTime;
+        }
+    </script>
+
+</body>
+</html>

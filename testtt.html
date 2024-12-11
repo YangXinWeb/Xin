@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Color Wave Background</title>
+    <style>
+        /* Set the basic style for the body */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            background: linear-gradient(45deg, #ff9a8b, #ff6a13, #ffb800, #ff5c8d, #6a2c77, #2e4a9e, #1f3a61, #0d1c32);
+            background-size: 300% 300%;
+            animation: colorWave 10s ease infinite;
+        }
+
+        /* Animation for smoothly changing background */
+        @keyframes colorWave {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>

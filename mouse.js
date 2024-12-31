@@ -60,7 +60,7 @@ function windowResized() {
 
           show() {
               noStroke();
-              fill(255, 0, 0); // Red color
+              fill(153, 153, 153); // Red color
               ellipse(this.x, this.y, this.size);
           }
       }

@@ -28,7 +28,7 @@
 }
 .work-covers:hover {
   opacity:0.2;
-  box-shadow: 0 0 20px 3px rgba(153,153,153, 1);
+  box-shadow: 0 0 20px 3px rgb(0, 0, 0);
 }
 .cover-text-title{
   margin-top:-5px;

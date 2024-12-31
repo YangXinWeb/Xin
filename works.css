@@ -19,7 +19,7 @@
 
 @keyframes pulse {
   0%, 100% {
-      transform: scale(0.9);
+      transform: scale(1);
   }
 
   50% {
@@ -28,7 +28,7 @@
 }
 .work-covers:hover {
   opacity:0.2;
-  box-shadow: 0 0 20px 3px rgba(255,0,0, 1);
+  box-shadow: 0 0 20px 3px rgba(153,153,153, 1);
 }
 .cover-text-title{
   margin-top:-5px;
@@ -37,14 +37,14 @@
   font-size: 13px;
 }
 .cover-text-title:hover{
-  color:rgb(255, 0, 0);
+  color:rgb(153, 153, 153);
 }
 .cover-text{
   margin-top:-10px;
   margin-left:10px;
-  color:rgb(135, 135, 135);
+  color:rgb(153, 153, 153);
   font-size: 11px;
 }
 .cover-text:hover{
-  color:rgb(255, 0, 0);
+  color:rgb(153, 153, 153);
 }

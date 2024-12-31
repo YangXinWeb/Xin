@@ -27,8 +27,8 @@ body,html {
   transition: text-shadow 0.3s, color 0.3s;
 }
 .name-yang-xin:hover{
-  color:rgb(255, 0, 0);
-  text-shadow:  0px 0px 20px rgba(255,0,0, 1);     
+  color:rgb(153, 153, 153);
+  text-shadow:  0px 0px 20px rgba(153, 153, 153, 1);     
 }
 .menu-icon {
 margin-top:20px;
@@ -47,8 +47,8 @@ transition: 0.4s;
 
 .bar:hover{
 width: 30px;
-background-color: rgb(255, 0, 0);
-box-shadow: 0 0 20px 3px rgba(255,0,0, 0.9);
+background-color: rgb(153, 153, 153);
+box-shadow: 0 0 20px 3px rgba(153, 153, 153, 0.9);
 transform: rotate(45deg); 
 }
 
@@ -75,8 +75,8 @@ text-decoration: none;
 color: #000000;
 }
 .menu a:hover {
-  color: rgb(255, 0, 0);
-  text-shadow:  0px 10px 30px rgba(255,0,0, 1); 
+  color: rgb(153, 153, 153);
+  text-shadow:  0px 10px 30px rgba(153, 153, 153); 
 }  
      
 .copy-right{

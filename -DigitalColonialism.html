@@ -30,6 +30,35 @@
             }
         }
 
+        /* For screens wider than 768px (tablets and desktops) */
+@media screen and (min-width: 768px) {
+    .sidebar {
+        width: 300px;
+    }
+    .content {
+        width: 70%;
+    }
+}
+
+/* For screens narrower than 768px (mobile phones) */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;  /* Adjust font size for smaller screens */
+    }
+    .sidebar {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .content {
+        width: 100%;
+        margin-top: 0;
+    }
+    .sound-item {
+        font-size: 14px; /* Smaller text on mobile */
+    }
+}
+
+
         .icon {
           width:20px;     
         }

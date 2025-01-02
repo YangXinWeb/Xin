@@ -353,6 +353,11 @@
     audio.addEventListener('pause', () => {
         document.getElementById('image').classList.remove('rotating');
     });
+
+        // Disable right-click on the entire body
+        document.body.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
     </script>
 </body>
 </html>

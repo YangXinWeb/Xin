@@ -96,15 +96,15 @@
         .image-container {
             width: 80%;
             height: 250px;                    
-            margin-bottom: 50px;
-            margin-top:150px;   
+            margin-bottom: 80px;
+            margin-top:180px;   
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .image-container img{
-          border-radius:10px;  
+          border-radius:50%;  
         }
 
         .image-container img {
@@ -112,11 +112,26 @@
             max-height: 100%;
         }
 
+        @keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+        /* Apply rotation animation to the image */
+        .image-container img.rotating {
+            animation: rotate 30s linear infinite; /* Adjust speed with '3s' */
+        }
+
         .play-button {
             position: absolute;
-            width: 50px;
-            height: 50px;
+            width: 70px;
+            height: 70px;
             background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 3px rgb(255, 255, 255);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -126,11 +141,37 @@
             cursor: pointer;
         }
 
+               /* Click effect: Shrinks and flashes */
+               .play-button:active {
+            transform: scale(0.9);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        @keyframes clickEffect {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 3px rgb(255, 255, 255);
+            }
+            50% {
+                transform: scale(0.85);
+                box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 3px rgb(255, 255, 255);
+            }
+        }
+
+        .play-button.clicked {
+            animation: clickEffect 0.3s ease;
+        }
+
         .text-container {
             text-align: left;
             background-color: rgba(255, 255, 255, 0.5);
             box-shadow: 0 1px 30px rgba(109, 72, 255, 0.4);        
-            margin-top: 80px;
+            margin-top: 30px;
             width:80%;
             border-radius:10px;
             padding:30px;
@@ -198,7 +239,7 @@
     <div class="content">
         <div class="image-container" id="imageContainer">
             <img id="image" src="" alt="">
-           <!--   <div class="play-button" onclick="togglePlay()">&#9658;</div>  -->
+            <div class="play-button" onclick="togglePlay()">&#9658;</div> 
         </div>
 
         <audio id="audio" controls controlsList="nodownload noplaybackrate">
@@ -276,6 +317,27 @@
 
         // Initialize with the first sound
         selectSound(0);
+
+        function togglePlay() {
+        const imageElement = document.getElementById('image');
+
+        if (audio.paused) {
+            audio.play();
+            imageElement.classList.add('rotating'); // Add rotation class
+        } else {
+            audio.pause();
+            imageElement.classList.remove('rotating'); // Remove rotation class
+        }
+    }
+
+    // Add event listeners to handle rotation when audio state changes
+    audio.addEventListener('play', () => {
+        document.getElementById('image').classList.add('rotating');
+    });
+
+    audio.addEventListener('pause', () => {
+        document.getElementById('image').classList.remove('rotating');
+    });
     </script>
 </body>
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Viewer</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+    </style>
+</head>
+<body>
+    <script type="module">
+        import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.module.js';
+        import { OBJLoader } from 'https://cdn.jsdelivr.net/npm/three@0.154.0/examples/jsm/loaders/OBJLoader.js';
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        const light = new THREE.DirectionalLight(0xffffff, 1);
+        light.position.set(10, 10, 10).normalize();
+        scene.add(light);
+
+        camera.position.z = 5;
+
+        const loader = new OBJLoader();
+        loader.load(
+            '3DModel/mice-3.obj',
+            (object) => {
+                console.log('Model loaded successfully:', object);
+                object.scale.set(0.1, 0.1, 0.1); // Adjust as needed
+                scene.add(object);
+            },
+            (xhr) => {
+                console.log(`Loading progress: ${(xhr.loaded / xhr.total) * 100}%`);
+            },
+            (error) => {
+                console.error('Error loading model:', error);
+            }
+        );
+
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    </script>
+</body>
+</html>

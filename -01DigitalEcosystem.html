@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YangXin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Ojuju:wght@200..800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+            margin: 100px;
+        }
+
+        .image-container {
+            margin-top: 10px;
+            margin-bottom: 30px;
+            position: relative;
+            width: 100%;
+        }
+
+        .image-container img {
+            max-width: 30%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .play-button .triangle {
+            width: 0;
+            height: 0;
+            border-left: 20px solid black;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+
+        .play-button .pause {
+            display: flex;
+            justify-content: space-between;
+            width: 20px;
+        }
+
+        .play-button .pause span {
+            display: block;
+            width: 8px;
+            height: 20px;
+            background: black;
+        }
+
+        .content {
+            margin-top: 20px;
+            text-align: left;
+            color:#5c5c5c;
+            font-family: "Chakra Petch", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .content h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #1f1f1f;
+        }
+
+        .content pre {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: "Chakra Petch", sans-serif;
+            font-weight: 300;
+            font-size: 10px;
+            font-style: normal;
+            color: #1f1f1f;
+        }
+
+        .progress-container {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .progress-bar {
+            flex-grow: 1;
+            height: 10px;
+            background: #ddd;
+            border-radius: 5px;
+            position: relative;
+            margin: 0 10px;
+        }
+
+        .progress {
+            height: 100%;
+            background:#2802ff;
+            border-radius: 5px;
+            width: 0;
+        }
+
+        .time {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .footer {
+          position: fixed;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 12px;
+          text-align: center;
+          width: 100%;
+          color:#2802ff;
+          background-color: #ffffff;
+        }
+        
+        body {        
+            background: linear-gradient(45deg, #6c6c6c, #2f2f2f, #242424, #0a1814, #405158, #959595, #1f3a61, #000000, #898989, #bcbcbc, #000000);
+            background-size: 500% 500%;
+            animation: colorWave 90s ease infinite;
+        }
+
+        /* Animation for smoothly changing background */
+        @keyframes colorWave {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="pictures/Works/IntuitionInDigitalEcosystem/02.jpg" alt="Digital Colonialism">
+            <button class="play-button" onclick="togglePlay()">
+                <div class="triangle"></div>
+            </button>
+        </div>
+
+        <div class="progress-container">
+            <span class="time" id="current-time">0:00</span>
+            <div class="progress-bar" onclick="seek(event)">
+                <div class="progress" id="progress"></div>
+            </div>
+            <span class="time" id="duration">0:00</span>
+        </div>
+        <div class="content">
+          <h1>The Signal and the Silence</h1>
+          <ul>
+            <li>User</li>
+            <li>A Interface </li>
+            <li>Echo </li>
+          </ul>
+          <pre>
+            ... 
+            &#129504; &#128065; &#129504;
+~
+
+
+         
+          </pre>
+      </div>
+    </div>
+    <div class="footer">
+      &copy; 2025 YangXin. All rights reserved.
+  </div>
+    <audio id="background-music" src="Sound/Techno-/03.mp3"></audio>
+    
+
+    <script>
+        const audio = document.getElementById('background-music');
+        const button = document.querySelector('.play-button');
+        const progressBar = document.getElementById('progress');
+        const currentTimeDisplay = document.getElementById('current-time');
+        const durationDisplay = document.getElementById('duration');
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                button.innerHTML = '<div class="pause"><span></span><span></span></div>';
+            } else {
+                audio.pause();
+                button.innerHTML = '<div class="triangle"></div>';
+            }
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            const progressPercent = (audio.currentTime / audio.duration) * 100;
+            progressBar.style.width = `${progressPercent}%`;
+
+            currentTimeDisplay.textContent = formatTime(audio.currentTime);
+            durationDisplay.textContent = formatTime(audio.duration);
+        });
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        function seek(event) {
+            const bar = event.target.getBoundingClientRect();
+            const offsetX = event.clientX - bar.left;
+            const newTime = (offsetX / bar.width) * audio.duration;
+            audio.currentTime = newTime;
+        }
+
+        
+    </script>
+
+</body>
+</html>
